@@ -1,10 +1,13 @@
-class SessionsController < ApplicationController
 
+class SessionsController < ApplicationController
+  include OauthHelper
+  
   def new
     render layout: 'login'
   end
 
   def facebook_login
+    redirect_to get_facebook_url
   end
 
   def callback
