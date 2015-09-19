@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
 
+  get '/login/facebook' => 'sessions#facebook_login'
+  get '/login/facebook/callback' => 'sessions#callback'
 
 end
