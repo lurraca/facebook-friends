@@ -22,7 +22,7 @@ RSpec.describe User, :type => :model do
     addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
     addresses.each do |address|
       valid_email_user = User.new(@attr.merge(email: address))
-      valid_email_user.should be_valid
+      expect(valid_email_user).to be_valid
     end
   end
 
@@ -30,21 +30,21 @@ RSpec.describe User, :type => :model do
     addresses = %w[user@foo,com user_at_foo.org example.user@foo.]
     addresses.each do |address|
       invalid_email_user = User.new(@attr.merge(email: address))
-      invalid_email_user.should_not be_valid
+      expect(invalid_email_user).not_to be_valid
     end
   end
 
   it 'should reject duplicate email addresses' do
     User.create!(@attr)
     user_with_duplicate_email = User.new(@attr)
-    user_with_duplicate_email.should_not be_valid
+    expect(user_with_duplicate_email).not_to be_valid
   end
 
   it 'should reject email addresses identical up to case' do
     upcased_email = @attr[:email].upcase
     User.create!(@attr.merge(email: upcased_email))
     user_with_duplicate_email = User.new(@attr)
-    user_with_duplicate_email.should_not be_valid
+    expect(user_with_duplicate_email).not_to be_valid
   end
 
   describe 'associations' do
