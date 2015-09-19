@@ -38,3 +38,13 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
+
+  describe "GET #destroy" do
+
+    it "destroy session and redirect to login" do
+      session[:user_id] = 1
+      expect{ get :destroy }.to change{ session[:user_id] }.from(1).to(nil)
+      expect(response).to redirect_to('/login')
+    end
+  end
+end
