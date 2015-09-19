@@ -27,7 +27,7 @@ module Facebook
     def access_token_url
       "https://graph.facebook.com/oauth/access_token?client_id=#{ENV['FB_APP_ID']}&" <<
           "client_secret=#{ENV['FB_APP_SECRET']}&"<<
-          "redirect_uri=http://localhost:3000/login/facebook/callback&code=#{@auth_code}"
+          "redirect_uri=#{ENV['CALLBACK_HOST']}/login/facebook/callback&code=#{@auth_code}"
     end
 
     def parse_access_token(response)
