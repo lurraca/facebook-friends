@@ -1,0 +1,63 @@
+header
+  .container
+    .row
+      .col-lg-12
+        img.play-on-logo src="https://playon.co/assets/images/PlayON-logo.png"
+        h1 Ruby on Rails Assessment
+      .col-sm-offset-4.col-sm-4
+        p Built with Ruby on Rails 4.2, Boostrap 3
+        p by Luis Urraca
+.container-fluid
+  .row.col-sm-12.text-center
+    h2.page-header My Data
+    p= "Name: #{current_user.name}"
+    p= "Email: #{current_user.email}"
+    img src='https://scontent.xx.fbcdn.net/hprofile-xap1/v/t1.0-1/c4.0.50.50/p50x50/1375158_10153215368327907_6736759551617638821_n.jpg?oh=8b5bafb66b10c9622b08ba6d782d4c3d&oe=5661E7F7'
+    .clearfix
+    = link_to 'Logout', logout_path
+
+.container
+  .row.col-sm-12
+    .row
+      .col-lg-12
+        h2.page-header My Friends
+      - @friends.each do |friend|
+
+
+        .col-lg-4.col-sm-6.text-center
+          img.img-circle.img-responsive.img-center alt="" src="#{friend.picture}" /
+          h3
+            = friend.name
+
+
+
+      /.col-lg-4.col-sm-6.text-center
+      /  img.img-circle.img-responsive.img-center alt="" src="http://placehold.it/200x200" /
+      /  h3
+      /    | John Smith
+      /    small Job Title
+      /  p What does this team member to? Keep it short! This is also a great spot for social links!
+      /.col-lg-4.col-sm-6.text-center
+      /  img.img-circle.img-responsive.img-center alt="" src="http://placehold.it/200x200" /
+      /  h3
+      /    | John Smith
+      /    small Job Title
+      /  p What does this team member to? Keep it short! This is also a great spot for social links!
+      /.col-lg-4.col-sm-6.text-center
+      /  img.img-circle.img-responsive.img-center alt="" src="http://placehold.it/200x200" /
+      /  h3
+      /    | John Smith
+      /    small Job Title
+      /  p What does this team member to? Keep it short! This is also a great spot for social links!
+      /.col-lg-4.col-sm-6.text-center
+      /  img.img-circle.img-responsive.img-center alt="" src="http://placehold.it/200x200" /
+      /  h3
+      /    | John Smith
+      /    small Job Title
+      /  p What does this team member to? Keep it short! This is also a great spot for social links!
+      /.col-lg-4.col-sm-6.text-center
+      /  img.img-circle.img-responsive.img-center alt="" src="http://placehold.it/200x200" /
+      /  h3
+      /    | John Smith
+      /    small Job Title
+      /  p What does this team member to? Keep it short! This is also a great spot for social links!

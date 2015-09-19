@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'dashboard#index'
 
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
