@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.4'
-gem 'sqlite3'
 gem 'slim'
 gem 'slim-rails'
 gem 'bootstrap-sass'
@@ -24,6 +23,11 @@ gem 'httparty'
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do
