@@ -14,6 +14,7 @@ gem 'turbolinks'
 
 gem 'puma'
 
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-byebug'
