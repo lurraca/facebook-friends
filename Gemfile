@@ -16,6 +16,8 @@ gem 'puma'
 
 gem 'dotenv-rails'
 
+gem 'httparty'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
