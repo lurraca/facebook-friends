@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
 
   get '/login/facebook' => 'sessions#facebook_login'
   get '/login/facebook/callback' => 'sessions#callback'

@@ -1,7 +1,7 @@
 
 class SessionsController < ApplicationController
   include OauthHelper
-  
+
   def new
     render layout: 'login'
   end
@@ -17,6 +17,12 @@ class SessionsController < ApplicationController
     else
       redirect_to '/login', notice: "There was an error trying to login with you Facebook account."
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    cookies.delete(:fb_access_token)
+    redirect_to login_path
   end
 
   private
