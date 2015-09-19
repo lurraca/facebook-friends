@@ -47,4 +47,8 @@ RSpec.describe User, :type => :model do
     user_with_duplicate_email.should_not be_valid
   end
 
+  describe 'associations' do
+    it { expect(User.new(@attr)).to have_many(:authorizations)}
+  end
+
 end
