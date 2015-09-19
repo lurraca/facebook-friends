@@ -47,7 +47,4 @@ RSpec.describe User, :type => :model do
     user_with_duplicate_email.should_not be_valid
   end
 
-
-
-
 end
