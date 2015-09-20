@@ -19,7 +19,8 @@ module Facebook
     end
 
     def get_user_friends
-       HTTParty.get(user_friends_url)["data"].map { |friend| Friend.new(friend) }
+      (taggable_friends || user_friends).map { |friend| Friend.new(friend) }
+
     end
 
     private
@@ -38,8 +39,20 @@ module Facebook
       "https://graph.facebook.com/me/?fields=email,name,friends,picture&access_token=#{@access_token}"
     end
 
-    def user_friends_url
+    def taggable_friends
+      HTTParty.get(user_taggable_friends_url)["data"]
+    end
+
+    def user_friends
+      HTTParty.get(user_friends_url)["data"]
+    end
+
+    def user_taggable_friends_url
       "https://graph.facebook.com/me/taggable_friends?fields=email,name,picture&access_token=#{@access_token}"
+    end
+
+    def user_friends_url
+      "https://graph.facebook.com/me/friends?fields=email,name,picture&access_token=#{@access_token}"
     end
 
   end
