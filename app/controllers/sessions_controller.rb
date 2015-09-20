@@ -34,7 +34,8 @@ class SessionsController < ApplicationController
     else
       user = User.new(
           name: graph_object.get_user_data['name'],
-          email: graph_object.get_user_data['email']
+          email: graph_object.get_user_data['email'],
+          picture: graph_object.get_user_data['picture']['data']['url']
       )
       user.authorizations.build(provider: provider, uid: graph_object.get_user_data['id'])
       if user.save

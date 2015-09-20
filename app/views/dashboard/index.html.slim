@@ -12,7 +12,7 @@ header
     h2.page-header My Data
     p= "Name: #{current_user.name}"
     p= "Email: #{current_user.email}"
-    img src='https://scontent.xx.fbcdn.net/hprofile-xap1/v/t1.0-1/c4.0.50.50/p50x50/1375158_10153215368327907_6736759551617638821_n.jpg?oh=8b5bafb66b10c9622b08ba6d782d4c3d&oe=5661E7F7'
+    img src="#{current_user.picture}"
     .clearfix
     = link_to 'Logout', logout_path
 
